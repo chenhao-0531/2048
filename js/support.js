@@ -77,7 +77,7 @@ function canMoveLeft(board) {
     for (var j = 1; j < 4; j++) {
       if (board[i][j] != 0) {
         // left of the current cell has value 0, or current cell and the cell on the left have same value
-        if (board[i][j-1] == 0 || board[i][j-1] == baord[i][j])
+        if (board[i][j-1] == 0 || board[i][j-1] == board[i][j])
           return true;
       }
     }
