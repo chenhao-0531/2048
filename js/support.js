@@ -68,6 +68,14 @@ function noBlockHorizontalCol(row, targetColumn, currentColumn, board) {
   return true;
 }
 
+function noBlockVerticalRow(column, targetRow, currentRow, board) {
+  for (var i = targetRow + 1; i < currentRow; i++) {
+    if (board[i][column] != 0)
+      return false;
+  }
+  return true;
+}
+
 /** 
 * decide if the cell can move left or not 
 * return true if it can, false otherwise
@@ -91,6 +99,32 @@ function canMoveRight(board) {
       if (board[i][j] != 0) {
         // right of the current cell has value 0, or current cell and the cell on the right have same value
         if (board[i][j+1] == 0 || board[i][j] == board[i][j+1])
+          return true;
+      }
+    }
+  }
+  return false;
+}
+
+function canMoveUp(board) {
+  for (var i = 0; i < 4; i++) {
+    for (var j = 1; j < 4; j++) {
+      if (board[j][i] != 0) {
+        // top of the current cell has value 0, or current cell and the cell on the top have same value
+        if (board[j-1][i] == 0 || board[j-1][i] == board[j][i])
+          return true;
+      }
+    }
+  }
+  return false;
+}
+
+function canMoveDown(board) {
+  for (var i = 0; i < 4; i++) {
+    for (var j = 3; j >= 0; j--) {
+      if (board[j][i] != 0) {
+        // top of the current cell has value 0, or current cell and the cell on the bottom have same value
+        if (board[j+1][i] == 0 || board[j+1][i] == board[j][i])
           return true;
       }
     }

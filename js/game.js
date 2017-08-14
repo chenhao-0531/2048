@@ -3,18 +3,22 @@ $(document).keydown(function(event) {
     case 37: //left
       if (moveLeft()) {
         generateOneNumber(); 
-        //isGameOver(); // if board is full, game over
       }
       break;
     case 38: // up
+      if (moveUp()) {
+        generateOneNumber(); 
+      }
       break;
     case 39: // right
       if (moveRight()) {
         generateOneNumber(); 
-        //isGameOver(); // if board is full, game over
       }
       break;
     case 40: // down
+      if (moveDown()) {
+        generateOneNumber(); 
+      }
       break;
   }
 });
@@ -75,6 +79,68 @@ function moveRight() {
               showMoveAnimation(i, j, i, k);
               board[i][k] += board[i][j] // add the values
               board[i][j] = 0;
+            }
+          }
+        }
+      }
+    }
+    setTimeout("updateBoardView();", 200);
+    return true;
+  }
+}
+
+function moveUp() {
+  if (!canMoveUp(board)) { // cannot move up
+    return false;
+  } else { 
+    // logic for move up operation
+    for (var i = 0; i < 4; i++) {
+      for (var j = 1; j < 4; j++) {
+        // the current cell must have value
+        if (board[j][i] != 0) {
+          // move the cell to top
+          for (var k = 0; k < j; k++) {
+            if (board[k][i] == 0 && noBlockVerticalRow(j, k, j, board)) {
+              // current cell has value and all the top cells are 0, can move up
+              showMoveAnimation(j, i, k, i);
+              board[k][i] = board[j][i];
+              board[j][i] = 0;
+            } else if (board[k][i] == board[j][i] && noBlockVerticalRow(k, i, j, board)) {
+              // current cell and top cell values are equal, and cells in between are 0, can move up
+              showMoveAnimation(j, i, k, i);
+              board[k][i] += board[j][i] // add the values
+              board[j][i] = 0;
+            }
+          }
+        }
+      }
+    }
+    setTimeout("updateBoardView();", 200);
+    return true;
+  }
+}
+
+function moveDown() {
+  if (!canMoveDown(board)) { // cannot move down
+    return false;
+  } else { 
+    // logic for move up operation
+    for (var i = 0; i < 4; i++) {
+      for (var j = 0; j < 3; j++) {
+        // the current cell must have value
+        if (board[j][i] != 0) {
+          // move the cell to bottom
+          for (var k = 3; k > j; k--) {
+            if (board[k][i] == 0 && noBlockVerticalRow(j, k, j, board)) {
+              // current cell has value and all the bottom cells are 0, can move down
+              showMoveAnimation(j, i, k, i);
+              board[k][i] = board[j][i];
+              board[j][i] = 0;
+            } else if (board[k][i] == board[j][i] && noBlockVerticalRow(k, i, j, board)) {
+              // current cell and bottom cell values are equal, and cells in between are 0, can move down
+              showMoveAnimation(j, i, k, i);
+              board[k][i] += board[j][i] // add the values
+              board[j][i] = 0;
             }
           }
         }
