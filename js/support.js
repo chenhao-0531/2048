@@ -56,3 +56,31 @@ function getNumberColor(number) {
   return "white";
     
 }
+
+/**
+* check if all the left cells of current cell has value 0
+*/
+function noBlockHorizontalCol(row, targetColumn, currentColumn, board) {
+  for (var i = targetColumn + 1; i < currentColumn; i++) {
+    if (board[row][i] != 0)
+      return false;
+  }
+  return true;
+}
+
+/** 
+* decide if the cell can move left or not 
+* return true if it can, false otherwise
+*/
+function canMoveLeft(board) {
+  for (var i = 0; i < 4; i++) {
+    for (var j = 1; j < 4; j++) {
+      if (board[i][j] != 0) {
+        // left of the current cell has value 0, or current cell and the cell on the left have same value
+        if (board[i][j-1] == 0 || board[i][j-1] == baord[i][j])
+          return true;
+      }
+    }
+  }
+  return false;
+}

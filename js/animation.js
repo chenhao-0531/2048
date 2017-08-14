@@ -13,3 +13,11 @@ function showNumberWithAnimation(i, j, randNumber) {
     left: getPosLeft(i, j)
   }, 50);
 }
+
+function showMoveAnimation(fromX, fromY, toX, toY) {
+  var numberCell = $("#number-cell-" + fromX + "-" + fromY);
+  numberCell.animate({
+    top: getPosTop(toX, toY),
+    left: getPosLeft(toX, toY)
+  }, 200);
+}

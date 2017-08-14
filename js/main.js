@@ -82,3 +82,4 @@ function generateOneNumber() {
   // add animation for generating random number
   showNumberWithAnimation(randX, randY, randNumber);
 }
+
