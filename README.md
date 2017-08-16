@@ -4,6 +4,7 @@ Project Title
 - 2048
 
 Getting Started
+- Clone the project `git clone https://github.com/chenhao-0531/2048.git`
 - Open index.html
 - Use you arrow keys to move the tiles. When two tiles with the same number touch, they merge into one!
 
