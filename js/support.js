@@ -94,7 +94,7 @@ function canMoveLeft(board) {
 
 function canMoveRight(board) {
   for (var i = 0; i < 4; i++) {
-    for (var j = 3; j >=0 ; j--) {
+    for (var j = 2; j >=0 ; j--) {
       if (board[i][j] != 0) {
         // right of the current cell has value 0, or current cell and the cell on the right have same value
         if (board[i][j+1] == 0 || board[i][j] == board[i][j+1])
@@ -120,7 +120,7 @@ function canMoveUp(board) {
 
 function canMoveDown(board) {
   for (var i = 0; i < 4; i++) {
-    for (var j = 3; j >= 0; j--) {
+    for (var j = 2; j >= 0; j--) {
       if (board[j][i] != 0) {
         // top of the current cell has value 0, or current cell and the cell on the bottom have same value
         if (board[j+1][i] == 0 || board[j+1][i] == board[j][i])
