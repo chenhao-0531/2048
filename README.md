@@ -1,5 +1,12 @@
 # 2048
 
-2048 is a very fun game and I always like to play. So I decided to implemented the game in a webpage using HTML5, CSS3 and jQuery.
+Project Title
+- 2048
 
-How to play: Use you arrow keys to move the tiles. When two tiles with the same number touch, they merge into one!
+Getting Started
+- Open index.html
+- Use you arrow keys to move the tiles. When two tiles with the same number touch, they merge into one!
+
+Description
+- The Game 2048 is implemented based on HTML5, CSS3, JavaScript and jQuery.
+

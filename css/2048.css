@@ -7,18 +7,35 @@ header {
 
 header h1 {
   font-family: Arial;
-  font-size: 40px;
+  font-size: 80px;
+  font-weight: bold;
+  color: #776e65;
+}
+
+header h2 {
+  position: relative;
+  bottom: 25px;
+  color: #776e65;
+}
+
+header p {
+  background-color: #8f7a66;
+  width: 100px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  color: #eee4da;
   font-weight: bold;
 }
 
 header #newgamebutton {
+  font-weight: bold;
   display: block;
   margin: 20px auto;
   width: 100px;
   padding: 10px 10px;
   background-color: #8f7a66;
   font-family: Arial;
-  color: white;
+  color: #eee4da;
   border-radius: 10px;
   text-decoration: none;
 }
