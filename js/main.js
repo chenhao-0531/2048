@@ -50,6 +50,9 @@ function updateBoardView() {
         numberCell.css("top", getPosTop(i, j) + 50);
         numberCell.css("left", getPosLeft(i, j) + 50);
       } else { // set number cell width, height, background-color and number value
+        if (Math.floor(board[i][j] / 1000)) {
+          numberCell.css("font-size", "35px");
+        }
         numberCell.css("width", "100px");
         numberCell.css("height", "100px");
         numberCell.css("top", getPosTop(i, j));
