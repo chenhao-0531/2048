@@ -1,5 +1,5 @@
 var board = new Array();
-
+var score = 0;
 $(function(){
   newGame();
 });
@@ -7,6 +7,7 @@ $(function(){
 function newGame() {
   // initialize the board cell and number cell
   init();
+  score = 0;
   // randomly generate two numbers
   generateOneNumber();
   generateOneNumber();
@@ -36,6 +37,7 @@ function init() {
 function updateBoardView() {
   // clear all numbers
   $(".number-cell").remove();
+  $( "#score" ).text(score);
   for (var i = 0; i < 4; i++) {
     for (var j = 0; j < 4; j++) {
       // add number cell to the board
