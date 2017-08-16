@@ -2,28 +2,34 @@ $(document).keydown(function(event) {
   switch (event.keyCode) {
     case 37: //left
       if (moveLeft()) {
-        setTimeout("generateOneNumber(); ", 200);
+        setTimeout("generateOneNumber();", 200);
+        setTimeout("IsGameOver();", 300);
+
       }
       break;
     case 38: // up
       if (moveUp()) {
-        setTimeout("generateOneNumber(); ", 200);
+        setTimeout("generateOneNumber();", 200);
+        setTimeout("IsGameOver();", 300);
+
       }
       break;
     case 39: // right
       if (moveRight()) {
-        setTimeout("generateOneNumber(); ", 200);
+        setTimeout("generateOneNumber();", 200);
+        setTimeout("IsGameOver();", 300);
+
       }
       break;
     case 40: // down
       if (moveDown()) {
-        setTimeout("generateOneNumber(); ", 200);
+        setTimeout("generateOneNumber();", 200);
+        setTimeout("IsGameOver();", 300);
+
       }
       break;
   }
-  if(!canMoveLeft(board) && !canMoveRight(board) && !canMoveUp(board) && !canMoveDown(board)){
-    setTimeout(alert("Game Over"), 200);
-  }
+  
 });
 
 /**
@@ -61,6 +67,12 @@ $(document).keydown(function(event) {
   }
 }*/
 
+
+function IsGameOver(){
+  if(!canMoveLeft(board) && !canMoveRight(board) && !canMoveUp(board) && !canMoveDown(board)){
+    alert("Game Over")
+  }
+}
 
 function moveLeft() {
   if (!canMoveLeft(board)) { // cannot move left
